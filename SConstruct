@@ -62,6 +62,7 @@ else:
 if nix:
     env.Append(CCFLAGS=["-O3", "-pthread"])
 if linux:
+    env.Append(CCFLAGS=["-fPIC"])
     env.Append(LINKFLAGS=["-Wl,--as-needed", "-Wl,-zdefs"])
 
 boostLibs = ["thread", "filesystem", "system"]
